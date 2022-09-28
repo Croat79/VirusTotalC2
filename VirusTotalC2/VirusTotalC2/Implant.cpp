@@ -1,6 +1,5 @@
 // tnx to   :   Tom Kallo for the recommendation and the inspiration.
-// credits  :   sektor7 (Noimports, function Obfuscation)
-//              https://nachtimwald.com blog (Base64 encoding decoding)
+// credits  :   https://nachtimwald.com blog (Base64 encoding decoding)
 
 #include <Windows.h>
 #include <stdio.h>
