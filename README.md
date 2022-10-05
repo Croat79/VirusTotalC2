@@ -8,3 +8,6 @@ Abusing VirusTotal API to host our C2 traffic, usefull for bypassing blocking fi
 ## be aware of the day's comments quota for the free API.  
 
 https://user-images.githubusercontent.com/110354855/192811979-f9beb0b8-c0cd-42d0-bd48-29b86a6775a4.mp4
+
+# disclaimer :  
+## I'm not responsible for any miseuse of this project  
