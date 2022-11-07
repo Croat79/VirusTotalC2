@@ -219,7 +219,9 @@ char* PostComment(char* APIkey, char* Hash, char* comment)
     }
     BOOL bIRF = TRUE;
     const int buffLen = 100000;
-    char* buffer = (char*)VirtualAlloc(0, 100000, MEM_COMMIT, PAGE_READWRITE);
+    //char* buffer = (char*)VirtualAlloc(0, 100000, MEM_COMMIT, PAGE_READWRITE);
+    char* buffer = (char*)malloc(buffLen);
+
     DWORD dwNumberOfBytesRead = -1;
     while (bIRF && dwNumberOfBytesRead != 0) {
         bIRF = InternetReadFile(hRequest, buffer, buffLen, &dwNumberOfBytesRead);
@@ -285,7 +287,9 @@ char* GetComment(char* APIkey, char* Hash)
     }
     BOOL bIRF = TRUE;
     const int buffLen = 100000;
-    char* buffer = (char*)VirtualAlloc(0, 100000, MEM_COMMIT, PAGE_READWRITE);
+    //char* buffer = (char*)VirtualAlloc(0, 100000, MEM_COMMIT, PAGE_READWRITE);
+    char* buffer = (char*)malloc(buffLen);
+
     DWORD dwNumberOfBytesRead = -1;
     while (bIRF && dwNumberOfBytesRead != 0) {
         bIRF = InternetReadFile(hRequest, buffer, buffLen, &dwNumberOfBytesRead);
